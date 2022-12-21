@@ -1,0 +1,38 @@
+﻿@model IEnumerable<MVCDapperKutuphane.Models.YazarlarModel>
+
+@{
+    Layout = "~/Views/Shared/_LayoutPagetblo.cshtml"; }
+
+<br />
+
+<p>
+    @Html.ActionLink("Yeni Ekle", "EY", null, new { @class = "btn btn-warning" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.YazarAd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.YazarSoyad)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.YazarAd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.YazarSoyad)
+            </td>
+            <td>
+                @Html.ActionLink("Düzenle", "EY", new { id = item.YazarNo }, new { @class = "btn btn-warning" }) |
+                @Html.ActionLink("Sil", "Delete", new { id = item.YazarNo }, new { @class = "btn btn-warning" })
+            </td>
+        </tr>
+    }
+
+</table>

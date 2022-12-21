@@ -1,0 +1,33 @@
+﻿@model IEnumerable<MVCDapperKutuphane.Models.TurModel>
+
+@{
+    Layout = "~/Views/Shared/_LayoutPagetblo.cshtml"; }
+
+
+<br />
+<p>
+    @Html.ActionLink("Yeni Ekle", "EY", null, new { @class = "btn btn-warning" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TurAdı)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TurAdı)
+            </td>
+            <td>
+                @Html.ActionLink("Düzenle", "EY", new { id = item.TurNo }, new { @class = "btn btn-warning" }) |
+                @*@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |*@
+                @Html.ActionLink("Sil", "Delete", new { id = item.TurNo }, new { @class = "btn btn-warning" })
+            </td>
+        </tr>
+    }
+
+</table>

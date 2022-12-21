@@ -1,0 +1,58 @@
+﻿@model IEnumerable<MVCDapperKutuphane.Models.IslemModel>
+
+@{ 
+    Layout = "~/Views/Shared/_LayoutPagetblo.cshtml"; }
+
+
+<br />
+<br />
+<br />
+<p>
+    @Html.ActionLink("Yeni Ekle", "EY", null, new { @class = "btn btn-warning" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.İslemNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AlısTarihi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TeslimTarihi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OgrenciNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KitapNo)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.İslemNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AlısTarihi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TeslimTarihi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OgrenciNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KitapNo)
+            </td>
+            <td>
+                @Html.ActionLink("Düzenle", "EY", new { id = item.İslemNo }, new { @class = "btn btn-warning" }) |
+                @Html.ActionLink("Sil", "Delete", new { id = item.İslemNo }, new { @class = "btn btn-warning" })
+            </td>
+        </tr>
+    }
+
+</table>

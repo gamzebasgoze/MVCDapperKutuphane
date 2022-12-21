@@ -1,0 +1,60 @@
+﻿@model MVCDapperKutuphane.Models.User
+
+@{ ViewBag.Title = "gir";
+                Layout = "~/Views/Shared/_LayoutPage.cshtml"; }
+
+@{ try
+    {
+
+        if (TempData["msg"] != null)
+        { @*<label style="color: red" >@TempData["msg"]</label>*@
+                            <script>alert("Kullanıcı adı veya Şifre Hatalı!!!");</script> }
+
+                                        }
+
+                                        catch
+                                        {
+
+                                        } }
+
+@using (Html.BeginForm())
+{
+@Html.AntiForgeryToken()
+
+                <section class="newsletter-area section-padding-100-0">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <!-- Newsletter Text -->
+                            <div class="col-12 col-lg-6 col-xl-7">
+                                <div class="newsletter-text mb-100">
+                                    <div class="text-white ">
+                                        <h1 style="color:white; padding-left:14px;">Admin Girişi</h1>
+                                        <hr />
+                                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "control-label col-md-12" })
+                                            <div class="col-md-10">
+                                                @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.Password1, htmlAttributes: new { @class = "control-label col-md-12" })
+                                            <div class="col-md-10">
+                                                @Html.EditorFor(model => model.Password1, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.Password1, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="col-md-offset-2 col-md-10 d-flex justify-content-end">
+                                                <input type="submit" value="Giriş Yap" class="btn btn-warning" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>}

@@ -1,0 +1,428 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{91A914E8-5BD9-4189-B6E4-97FA292A24BE}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MVCDapperKutuphane</RootNamespace>
+    <AssemblyName>MVCDapperKutuphane</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44327</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper, Version=1.60.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.60.1\lib\net451\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SqlClient, Version=4.6.1.5, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SqlClient.4.8.5\lib\net461\System.Data.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountsController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\denemeController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IslemController.cs" />
+    <Compile Include="Controllers\KitaplarController.cs" />
+    <Compile Include="Controllers\OgrenciController.cs" />
+    <Compile Include="Controllers\TurController.cs" />
+    <Compile Include="Controllers\YazarController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DP.cs" />
+    <Compile Include="Models\IslemModel.cs" />
+    <Compile Include="Models\KitaplarModel.cs" />
+    <Compile Include="Models\OgrenciModel.cs" />
+    <Compile Include="Models\TurModel.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\UserMaster.cs" />
+    <Compile Include="Models\YazarlarModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Anasayfa\.gitattributes" />
+    <Content Include="Anasayfa\.gitignore" />
+    <Content Include="Anasayfa\cart.html" />
+    <Content Include="Anasayfa\checkout.html" />
+    <Content Include="Anasayfa\css\animate.css" />
+    <Content Include="Anasayfa\css\bootstrap.min.css" />
+    <Content Include="Anasayfa\css\classy-nav.min.css" />
+    <Content Include="Anasayfa\css\core-style.css" />
+    <Content Include="Anasayfa\css\font-awesome.min.css" />
+    <Content Include="Anasayfa\css\jquery-ui.min.css" />
+    <Content Include="Anasayfa\css\magnific-popup.css" />
+    <Content Include="Anasayfa\css\nice-select.css" />
+    <Content Include="Anasayfa\css\owl.carousel.css" />
+    <Content Include="Anasayfa\fonts\fontawesome-webfont.svg" />
+    <Content Include="Anasayfa\img\bg-img\1.jpg" />
+    <Content Include="Anasayfa\img\bg-img\2.jpg" />
+    <Content Include="Anasayfa\img\bg-img\3.jpg" />
+    <Content Include="Anasayfa\img\bg-img\4.jpg" />
+    <Content Include="Anasayfa\img\bg-img\5.jpg" />
+    <Content Include="Anasayfa\img\bg-img\6.jpg" />
+    <Content Include="Anasayfa\img\bg-img\7.jpg" />
+    <Content Include="Anasayfa\img\bg-img\8.jpg" />
+    <Content Include="Anasayfa\img\bg-img\9.jpg" />
+    <Content Include="Anasayfa\img\bg-img\cart1.jpg" />
+    <Content Include="Anasayfa\img\bg-img\cart2.jpg" />
+    <Content Include="Anasayfa\img\bg-img\cart3.jpg" />
+    <Content Include="Anasayfa\img\core-img\cart.png" />
+    <Content Include="Anasayfa\img\core-img\favicon.ico" />
+    <Content Include="Anasayfa\img\core-img\favorites.png" />
+    <Content Include="Anasayfa\img\core-img\logo.png" />
+    <Content Include="Anasayfa\img\core-img\logo2.png" />
+    <Content Include="Anasayfa\img\core-img\paypal.png" />
+    <Content Include="Anasayfa\img\core-img\search.png" />
+    <Content Include="Anasayfa\img\product-img\pro-big-1.jpg" />
+    <Content Include="Anasayfa\img\product-img\pro-big-2.jpg" />
+    <Content Include="Anasayfa\img\product-img\pro-big-3.jpg" />
+    <Content Include="Anasayfa\img\product-img\pro-big-4.jpg" />
+    <Content Include="Anasayfa\img\product-img\product1.jpg" />
+    <Content Include="Anasayfa\img\product-img\product2.jpg" />
+    <Content Include="Anasayfa\img\product-img\product3.jpg" />
+    <Content Include="Anasayfa\img\product-img\product4.jpg" />
+    <Content Include="Anasayfa\img\product-img\product5.jpg" />
+    <Content Include="Anasayfa\img\product-img\product6.jpg" />
+    <Content Include="Anasayfa\index.html" />
+    <Content Include="Anasayfa\js\active.js" />
+    <Content Include="Anasayfa\js\bootstrap.min.js" />
+    <Content Include="Anasayfa\js\classy-nav.min.js" />
+    <Content Include="Anasayfa\js\jquery\jquery-2.2.4.min.js" />
+    <Content Include="Anasayfa\js\map-active.js" />
+    <Content Include="Anasayfa\js\plugins.js" />
+    <Content Include="Anasayfa\js\popper.min.js" />
+    <Content Include="Anasayfa\product-details.html" />
+    <Content Include="Anasayfa\shop.html" />
+    <Content Include="Anasayfa\style.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Logintema\dist\index.html" />
+    <Content Include="Logintema\dist\style.css" />
+    <Content Include="Logintema\license.txt" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Anasayfa\.sass-cache\23fb10bb6531a16595cc9a8cbcaeb8f40f41ec84\style.scssc" />
+    <Content Include="Anasayfa\.sass-cache\23fb10bb6531a16595cc9a8cbcaeb8f40f41ec84\_mixin.scssc" />
+    <Content Include="Anasayfa\.sass-cache\23fb10bb6531a16595cc9a8cbcaeb8f40f41ec84\_responsive.scssc" />
+    <Content Include="Anasayfa\.sass-cache\23fb10bb6531a16595cc9a8cbcaeb8f40f41ec84\_theme_color.scssc" />
+    <Content Include="Anasayfa\.sass-cache\23fb10bb6531a16595cc9a8cbcaeb8f40f41ec84\_variables.scssc" />
+    <Content Include="Anasayfa\.sass-cache\997c61c8c2a2a831333fab68bc2254612bdf8817\style.scssc" />
+    <Content Include="Anasayfa\.sass-cache\997c61c8c2a2a831333fab68bc2254612bdf8817\_mixin.scssc" />
+    <Content Include="Anasayfa\.sass-cache\997c61c8c2a2a831333fab68bc2254612bdf8817\_responsive.scssc" />
+    <Content Include="Anasayfa\.sass-cache\997c61c8c2a2a831333fab68bc2254612bdf8817\_theme_color.scssc" />
+    <Content Include="Anasayfa\.sass-cache\997c61c8c2a2a831333fab68bc2254612bdf8817\_variables.scssc" />
+    <Content Include="Anasayfa\css\core-style.css.map" />
+    <Content Include="Anasayfa\fonts\fontawesome-webfont.eot" />
+    <Content Include="Anasayfa\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Anasayfa\fonts\fontawesome-webfont.woff" />
+    <Content Include="Anasayfa\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Anasayfa\fonts\FontAwesome.otf" />
+    <Content Include="Anasayfa\fonts\helveticaneue_medium-webfont.ttf" />
+    <Content Include="Anasayfa\fonts\helveticaneue_medium-webfont.woff" />
+    <Content Include="Anasayfa\fonts\helveticaneue_medium-webfont.woff2" />
+    <Content Include="Anasayfa\fonts\helvetica_neu_bold-webfont.ttf" />
+    <Content Include="Anasayfa\fonts\helvetica_neu_bold-webfont.woff" />
+    <Content Include="Anasayfa\fonts\helvetica_neu_bold-webfont.woff2" />
+    <Content Include="Anasayfa\scss\style.scss" />
+    <Content Include="Anasayfa\scss\_mixin.scss" />
+    <Content Include="Anasayfa\scss\_responsive.scss" />
+    <Content Include="Anasayfa\scss\_theme_color.scss" />
+    <Content Include="Anasayfa\scss\_variables.scss" />
+    <Content Include="Logintema\README.markdown" />
+    <Content Include="Logintema\src\index.pug" />
+    <Content Include="Logintema\src\style.scss" />
+    <Content Include="Anasayfa\fonts\Roboto-Medium.ttf" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Tema\.gitattributes" />
+    <Content Include="Tema\.gitignore" />
+    <Content Include="Tema\cart.html" />
+    <Content Include="Tema\checkout.html" />
+    <Content Include="Tema\css\animate.css" />
+    <Content Include="Tema\css\bootstrap.min.css" />
+    <Content Include="Tema\css\classy-nav.min.css" />
+    <Content Include="Tema\css\core-style.css" />
+    <Content Include="Tema\css\font-awesome.min.css" />
+    <Content Include="Tema\css\jquery-ui.min.css" />
+    <Content Include="Tema\css\magnific-popup.css" />
+    <Content Include="Tema\css\nice-select.css" />
+    <Content Include="Tema\css\owl.carousel.css" />
+    <Content Include="Tema\fonts\fontawesome-webfont.svg" />
+    <Content Include="Tema\img\bg-img\Alexandria%28İskenderiye%29 Kütüphanesi.jpg" />
+    <Content Include="Tema\img\bg-img\Britanya_Kutuphanesi.jpg" />
+    <Content Include="Tema\img\bg-img\El_Escorial_Kutuphanesi.jpg" />
+    <Content Include="Tema\img\bg-img\George_Peabody_Kutuphanesi.jpg" />
+    <Content Include="Tema\img\bg-img\Karadeniz_Teknik_Universitesi.jpg" />
+    <Content Include="Tema\img\bg-img\Klementinum_Kutuphanesi.jpg" />
+    <Content Include="Tema\img\bg-img\Millet_kutuphanesi.jpg" />
+    <Content Include="Tema\img\bg-img\Stuttgart_Sehir_Kutuphanesi.jpg" />
+    <Content Include="Tema\img\bg-img\Trinity_College_Kutuphanesi.jpg" />
+    <Content Include="Tema\img\core-img\cart.png" />
+    <Content Include="Tema\img\core-img\favicon.ico" />
+    <Content Include="Tema\img\core-img\favorites.png" />
+    <Content Include="Tema\img\core-img\logo.png" />
+    <Content Include="Tema\img\core-img\logo2.png" />
+    <Content Include="Tema\img\core-img\paypal.png" />
+    <Content Include="Tema\img\core-img\search.png" />
+    <Content Include="Tema\img\product-img\pro-big-1.jpg" />
+    <Content Include="Tema\img\product-img\pro-big-2.jpg" />
+    <Content Include="Tema\img\product-img\pro-big-3.jpg" />
+    <Content Include="Tema\img\product-img\pro-big-4.jpg" />
+    <Content Include="Tema\img\product-img\product1.jpg" />
+    <Content Include="Tema\img\product-img\product2.jpg" />
+    <Content Include="Tema\img\product-img\product3.jpg" />
+    <Content Include="Tema\img\product-img\product4.jpg" />
+    <Content Include="Tema\img\product-img\product5.jpg" />
+    <Content Include="Tema\img\product-img\product6.jpg" />
+    <Content Include="Tema\index.html" />
+    <Content Include="Tema\js\active.js" />
+    <Content Include="Tema\js\bootstrap.min.js" />
+    <Content Include="Tema\js\classy-nav.min.js" />
+    <Content Include="Tema\js\jquery\jquery-2.2.4.min.js" />
+    <Content Include="Tema\js\map-active.js" />
+    <Content Include="Tema\js\plugins.js" />
+    <Content Include="Tema\js\popper.min.js" />
+    <Content Include="Tema\product-details.html" />
+    <Content Include="Tema\shop.html" />
+    <Content Include="Tema\style.css" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Islem\Index.cshtml" />
+    <Content Include="Views\Islem\EY.cshtml" />
+    <Content Include="Views\Kitaplar\Index.cshtml" />
+    <Content Include="Views\Kitaplar\EY.cshtml" />
+    <Content Include="Views\Ogrenci\Index.cshtml" />
+    <Content Include="Views\Ogrenci\EY.cshtml" />
+    <Content Include="Views\Tur\Index.cshtml" />
+    <Content Include="Views\Tur\EY.cshtml" />
+    <Content Include="Views\Yazar\Index.cshtml" />
+    <Content Include="Views\Yazar\EY.cshtml" />
+    <Content Include="Views\Accounts\Login.cshtml" />
+    <Content Include="Views\Shared\_LayoutPageAnasayfa.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutPage.cshtml" />
+    <Content Include="Tema\css\core-style.css.map" />
+    <Content Include="Tema\fonts\fontawesome-webfont.eot" />
+    <Content Include="Tema\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Tema\fonts\fontawesome-webfont.woff" />
+    <Content Include="Tema\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Tema\fonts\FontAwesome.otf" />
+    <Content Include="Tema\fonts\helveticaneue_medium-webfont.ttf" />
+    <Content Include="Tema\fonts\helveticaneue_medium-webfont.woff" />
+    <Content Include="Tema\fonts\helveticaneue_medium-webfont.woff2" />
+    <Content Include="Tema\fonts\helvetica_neu_bold-webfont.ttf" />
+    <Content Include="Tema\fonts\helvetica_neu_bold-webfont.woff" />
+    <Content Include="Tema\fonts\helvetica_neu_bold-webfont.woff2" />
+    <Content Include="Tema\scss\style.scss" />
+    <Content Include="Tema\scss\_mixin.scss" />
+    <Content Include="Tema\scss\_responsive.scss" />
+    <Content Include="Tema\scss\_theme_color.scss" />
+    <Content Include="Tema\scss\_variables.scss" />
+    <Content Include="Views\Accounts\Login1.cshtml" />
+    <Content Include="Views\Shared\_LayoutPagetblo.cshtml" />
+    <Content Include="Views\deneme\Index.cshtml" />
+    <Content Include="Tema\fonts\Roboto-Medium.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>62733</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44327/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

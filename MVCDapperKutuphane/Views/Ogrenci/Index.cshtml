@@ -1,0 +1,49 @@
+﻿@model IEnumerable<MVCDapperKutuphane.Models.OgrenciModel>
+@{
+    Layout = "~/Views/Shared/_LayoutPagetblo.cshtml"; }
+
+<br />
+<p>
+    @Html.ActionLink("Yeni Ekle", "EY", null, new { @class = "btn btn-warning" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.OgrenciAdSoyad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cinsiyet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DTarihi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Bolum)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.OgrenciAdSoyad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cinsiyet)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DTarihi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bolum)
+            </td>
+            <td>
+                @Html.ActionLink("Düzenle", "EY", new { id = item.OgrenciNo }, new { @class = "btn btn-warning" }) |
+                @Html.ActionLink("Sil", "Delete", new { id = item.OgrenciNo }, new { @class = "btn btn-warning" })
+            </td>
+        </tr>
+    }
+
+</table>
+
